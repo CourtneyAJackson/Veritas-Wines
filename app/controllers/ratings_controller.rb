@@ -11,8 +11,7 @@ class RatingsController < ApplicationController
 
   #GET /ratings/1
   def show
-    render json: @rating
-    # , include :wines
+    render json: @rating_params, include: :wines
   end
 
   #POST /ratings
@@ -39,14 +38,16 @@ class RatingsController < ApplicationController
   #DELETE /rating/1
   def destroy
     @rating.destroy
-  end
+  end 
+  
+
 
   private 
   def set_rating 
     @rating = Rating.find(params[:id])
   end
   def rating_params
-    params.require(:rating).permit(:rank, :user_id)
+    params.require(:rating).permit(:rank)
   end
 
 end

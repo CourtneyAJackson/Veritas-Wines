@@ -4,7 +4,7 @@ class WinesController < ApplicationController
   def index
     @wines = Wine.all
 
-    render json: @flavors
+    render json: @wines
   end
 
 end
