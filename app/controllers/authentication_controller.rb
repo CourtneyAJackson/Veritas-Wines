@@ -29,4 +29,3 @@ class AuthenticationController < ApplicationController
 end
 
 
-end

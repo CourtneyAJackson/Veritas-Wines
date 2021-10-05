@@ -5,6 +5,6 @@ resources :users, only: :create
 post '/auth/login', to: 'authentication#login'
 get '/auth/verify', to: 'authentication#verify'
 resources :ratings
-
+resources :wines, only: :index
 
 end

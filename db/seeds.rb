@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Ratings.destroy_all
+
+Rating.create({ rank: '5'})
+Rating.create({ rank: '3'})
+Rating.create({ rank: '1'})
+Rating.create({ rank: '5'})
