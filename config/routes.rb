@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 post '/auth/login', to: 'authentication#login'
 get '/auth/verify', to: 'authentication#verify'
 
-resources :users, only: [:create, :index]
+resources :users, only: [:create, :show, :index]
 resources :ratings
 resources :wines, only: [:index, :show]
+put '/wines/:wine_id/ratings/:id', to: 'ratings#add_wine_to_rating'
 
 end
