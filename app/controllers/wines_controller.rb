@@ -6,5 +6,9 @@ class WinesController < ApplicationController
 
     render json: @wines
   end
-
+   
+  def show 
+    @wine = Wine.find(params[:id])
+    render json: @wine, include: :ratings
+  end 
 end

@@ -5,6 +5,6 @@ get '/auth/verify', to: 'authentication#verify'
 
 resources :users, only: [:create, :index]
 resources :ratings
-resources :wines, only: :index
+resources :wines, only: [:index, :show]
 
 end
