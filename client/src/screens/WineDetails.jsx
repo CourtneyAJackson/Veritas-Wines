@@ -1,36 +1,36 @@
 import { useParams } from "react-router-dom"
 import {useState, useEffect} from "react"
-import { getAllWines } from "../services/wines"
-import { getAllRatings } from "../services/ratings"
+import { getOneWine } from "../services/wines"
+
 
 export default function WineDetails(props) {
 
-  const {id} = useParams()
-  const [wine, setWine] = useState(null)
+
+  const [wineInfo, setWineInfo] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
-  useEffect(() => {
-    const fetchWine = async () => {
-      const wines = await getAllWines()
-      setWine(wines)
-      setLoaded(true)
-      console.log(wines)
-    }
-    fetchWine()
-  }, [])
-  console.log(wine.id)
+  const { id } = useParams()
+  const { ratings } = props
+  // console.log(ratings)
+  // const [selectedRating, setSelectedRating] = useState('')
   
+  useEffect(() => {
+    const fetchOneWine = async () => {
+      const wineData = await getOneWine(id)
+      setWineInfo(wineData)
+      setLoaded(true)
+      console.log(wineData)
+    }
+    fetchOneWine()
+  }, [id])
   
   if (!isLoaded) {
-    return <h2>Loading...</h2>
+    return <h1>Loading...</h1>;
   }
-
-  // const wineInfo = wine.find(wineObj => wineObj.id === wine.id)
-  // console.log(wine.find(wineObj =>))
 
   return (
     <div>
       <h2>This is the wine detail page</h2>
-      <h1>{}</h1>
+      <p>{ wineInfo.name}</p>
     </div>
   )
 }

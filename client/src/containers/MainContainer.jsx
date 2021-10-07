@@ -4,6 +4,8 @@ import { getAllRatings } from '../services/ratings.js'
 import { getAllWines } from '../services/wines.js'
 import Wines from '../screens/Wines.jsx'
 import WineDetails from '../screens/WineDetails.jsx'
+
+
 function MainContainer() {
 
   const [ratings, setRatings] = useState([])
@@ -13,6 +15,7 @@ function MainContainer() {
     const getRatings = async () => {
       const ratingsList = await getAllRatings()
       setRatings(ratingsList)
+     
     }
     getRatings()
   }, [])
@@ -21,6 +24,7 @@ function MainContainer() {
     const getWines = async () => {
       const winesList = await getAllWines()
       setWines(winesList)
+    //  console.log(winesList)
     }
     getWines()
   },[])
@@ -29,10 +33,10 @@ function MainContainer() {
   return (
     <Switch>
       <Route path='/wines'>
-        <Wines wines={wines}/>
+        <Wines wines={wines} ratings={ratings}/>
       </Route>
-      <Route path='/wineDetails/:wine'>
-        <WineDetails wines={wines}/>
+      <Route path='/wineDetails/:id'>
+        <WineDetails ratings={ratings} />
       </Route>
     </Switch>
   )
