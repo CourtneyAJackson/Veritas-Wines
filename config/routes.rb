@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-post '/auth/login', to: 'authentication#login'
-get '/auth/verify', to: 'authentication#verify'
+  post '/auth/login', to: 'authentication#login'
+  get '/auth/verify', to: 'authentication#verify'
 
-resources :users, only: [:create, :show, :index]
-resources :ratings
-resources :wines, only: [:index, :show]
-put '/wines/:wine_id/ratings/:id', to: 'ratings#add_wine_to_rating'
-
+  resources :users, only: :create 
+  resources :ratings
+  resources :wines, only: [:index, :show]
+  put '/wines/:wine_id/ratings/:id', to: 'ratings#add_wine_to_rating'
 end

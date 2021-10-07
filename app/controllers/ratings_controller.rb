@@ -47,7 +47,7 @@ class RatingsController < ApplicationController
     
     @rating.wines << @wine
 
-    render json: @rating, include: :wines
+    render json: @rating, include: :wine
 
   end
 
@@ -58,7 +58,7 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:rank)
+    params.require(:rating).permit(:rank, :wine_id)
   end
 
 end
