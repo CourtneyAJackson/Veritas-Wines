@@ -13,18 +13,18 @@ import RatingEdit from '../screens/RatingEdit.jsx'
 
 function MainContainer() {
 
-  const [ratings, setRatings] = useState([])
+  // const [ratings, setRatings] = useState([])
   const [wines, setWines] = useState([])
-  const history = useHistory()
+  // const history = useHistory()
 
-  useEffect(() => {
-    const getRatings = async () => {
-      const ratingsList = await getAllRatings()
-      setRatings(ratingsList)
+  // useEffect(() => {
+  //   const getRatings = async () => {
+  //     const ratingsList = await getAllRatings()
+  //     setRatings(ratingsList)
      
-    }
-    getRatings()
-  }, [])
+  //   }
+  //   getRatings()
+  // }, [])
   
   useEffect(() => {
     const getWines = async () => {
@@ -35,38 +35,38 @@ function MainContainer() {
     getWines()
   }, [])
   
-  const handleRatingCreate = async (ratingData) => {
-    const newRating = await postRating(ratingData);
-    setRatings((prevState) => [...prevState, newRating]);
-    history.push('/wines');
-  };
-  const handleRatingEdit = async (id, ratingData) => {
-    const updatedRating = await putRating(id, ratingData);
-    setRatings((prevState) =>
-      prevState.map((rating) => {
-        return rating.id === Number(id) ? updatedRating : rating;
-      })
-    );
-    history.push('/wines');
-  };
+  // const handleRatingCreate = async (ratingData) => {
+  //   const newRating = await postRating(ratingData);
+  //   setRatings((prevState) => [...prevState, newRating]);
+  //   // history.push('/wines');
+  // };
+  // const handleRatingEdit = async (id, ratingData) => {
+  //   const updatedRating = await putRating(id, ratingData);
+  //   setRatings((prevState) =>
+  //     prevState.map((rating) => {
+  //       return rating.id === Number(id) ? updatedRating : rating;
+  //     })
+  //   );
+  //   history.push('/wines');
+  // };
 
 
   return (
     <Switch>
-      <Route path='/wines'>
-        <Wines wines={wines} ratings={ratings}/>
+      <Route exact path='/wines'>
+        <Wines wines={wines}/>
       </Route>
       <Route path='/wine-details/:id'>
-        <WineDetails ratings={ratings} />
+        <WineDetails />
       </Route>
       <Route path='/ratings/:id/new'>
-        <RatingCreate handleRatingCreate={handleRatingCreate} />
+        <RatingCreate  />
       </Route>
       <Route path='/ratings/:id/edit'>
-        <RatingEdit ratings={ratings} handeRatingEdit={handleRatingEdit} />
+        {/* <RatingEdit ratings={ratings} handeRatingEdit={handleRatingEdit} /> */}
       </Route>
     </Switch>
   )
 }
-
+// handleRatingCreate={handleRatingCreate}
 export default MainContainer

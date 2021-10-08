@@ -5,7 +5,7 @@ class RatingsController < ApplicationController
   #GET /ratings
   def index 
     @ratings = Rating.all
-    render json: @ratings, include: :wines
+    render json: @ratings, include: :wine
   end
 
   #GET /ratings/1
@@ -14,10 +14,12 @@ class RatingsController < ApplicationController
     render json: @rating, include: :wine
   end
 
-  #POST /ratings
+  #POST /wines/:wine_id/ratings
   def create
+    @wine = Wine.find(params[:wine_id])
     @rating = Rating.new(rating_params)
     @rating.user = @current_user
+    @rating.wine = @wine
 
     if @rating.save
       render json: @rating, status: :created
@@ -41,13 +43,13 @@ class RatingsController < ApplicationController
   end 
   
   #adding wines to ratings method goes here
-  def add_wine_to_rating
-    @rating = Rating.find(params[:id])
-    @wine = Wine.find(params[:wine_id])
+  def add_rating_to_wine
+    @rating = Wine.find(params[:id])
+    @wine = Ratings.find(params[:wine_id])
     
-    @rating.wines << @wine
+    @rating.ratings << @rating
 
-    render json: @rating, include: :wine
+    render json: @wine, include: :rating
 
   end
 
@@ -58,7 +60,7 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:rank, :wine_id)
+    params.require(:rating).permit(:rank, :wine_id, :user_id)
   end
 
 end

@@ -1,7 +1,7 @@
 import api from './config'
 
 export const getAllRatings = async () => {
-  const res = await api.get('./ratings')
+  const res = await api.get('/ratings')
   return res.data
 }
 
@@ -10,8 +10,9 @@ export const getOneRating = async (id) => {
   return resp.data;
 };
 
-export const postRating = async (ratingData) => {
-  const resp = await api.post('/ratings', { rating: ratingData });
+export const postRating = async (ratingData, id) => {
+  console.log("from services",ratingData)
+  const resp = await api.post(`/wines/${id}/ratings`, { rating: ratingData });
   return resp.data;
 };
 
@@ -21,11 +22,11 @@ export const deleteRating = async (id) => {
 };
 
 export const putRating = async (id, ratingData) => {
-  const resp = await api.put(`/ratings/${id}`, { rating: ratingData });
+  const resp = await api.put(`//${id}`, { rating: ratingData });
   return resp.data;
 };
 
-export const addRatingToWine = async (ratingId, id) => {
-  const resp = await api.put(`/ratings/${ratingId}/wines/${id}`);
-  return resp.data;
-};
+// export const addRatingToWine = async (ratingId, id) => {
+//   const resp = await api.put(`/ratings/${ratingId}/wines/${id}`);
+//   return resp.data;
+// };

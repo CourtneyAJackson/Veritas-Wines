@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { addRatingToWine } from '../services/ratings';
+import { useHistory } from 'react-router';
+import {postRating } from '../services/ratings';
 import {getOneWine } from '../services/wines'
 
 
@@ -9,7 +10,8 @@ function RatingCreate(props) {
   const [wineItem, setWineItem] = useState(null);
   const [selectedRating, setSelectedRating] = useState('');
   const { id } = useParams();
-  const { wines } = props;
+  // const { wines } = props;
+  let history = useHistory()
 
   useEffect(() => {
     const fetchWineItem = async () => {
@@ -18,17 +20,7 @@ function RatingCreate(props) {
     };
     fetchWineItem();
   }, [id]);
-  // const [formData, setFormData] = useState({
-  //   rank: ''
-  // })
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -37,9 +29,14 @@ function RatingCreate(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const oneWineItem = await addRatingToWine(selectedRating, id);
+
+    const fullRating = {
+      rank: selectedRating
+    }
+    const oneWineItem = await postRating(fullRating, id);
     setWineItem(oneWineItem);
     console.log(wineItem)
+    history.push(`/wine-details/${id}`)
   };
 
 
@@ -63,9 +60,8 @@ function RatingCreate(props) {
         </select>
         <button>Submit</button>
       </form>
-      );
     </div>
-  )
+      );
 }
 
 export default RatingCreate
