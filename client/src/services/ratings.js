@@ -25,7 +25,7 @@ export const putRating = async (id, ratingData) => {
   return resp.data;
 };
 
-// export const addFlavorToFood = async (flavorId, id) => {
-//   const resp = await api.put(`/flavors/${flavorId}/foods/${id}`);
-//   return resp.data;
-// };
+export const addRatingToWine = async (ratingId, id) => {
+  const resp = await api.put(`/ratings/${ratingId}/wines/${id}`);
+  return resp.data;
+};

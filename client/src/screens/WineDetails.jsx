@@ -34,7 +34,7 @@ export default function WineDetails(props) {
       <p>{wineInfo.year}</p>
       <p>{`$${wineInfo.price}.00`}</p>
       <p>{wineInfo.description}</p>
-      <Link to='/ratings-new'>Add a Rating</Link>
+      <Link to={`/ratings/${wineInfo.id}/new`}>Add a Rating</Link>
       <Link to={`/ratings/${wineInfo.id}/edit`}>Edit Rating</Link>
       <img src={wineInfo.img} />
       
