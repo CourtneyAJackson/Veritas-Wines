@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import {useHistory} from 'react-router-dom'
-import {Switch, Route} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { getAllRatings, postRating, putRating, updatedRating, deleteRating } from '../services/ratings.js'
 import { getAllWines } from '../services/wines.js'
 import Wines from '../screens/Wines.jsx'
@@ -13,57 +13,58 @@ import RatingEdit from '../screens/RatingEdit.jsx'
 
 function MainContainer() {
 
-  // const [ratings, setRatings] = useState([])
+  const [toggle, setToggle] = useState(false)
   const [wines, setWines] = useState([])
-  // const history = useHistory()
+  const history = useHistory()
 
   // useEffect(() => {
   //   const getRatings = async () => {
   //     const ratingsList = await getAllRatings()
   //     setRatings(ratingsList)
-     
+
   //   }
   //   getRatings()
   // }, [])
-  
+
   useEffect(() => {
     const getWines = async () => {
       const winesList = await getAllWines()
       setWines(winesList)
-    //  console.log(winesList)
+      //  console.log(winesList)
     }
     getWines()
-  }, [])
-  
+  }, [toggle])
+
   // const handleRatingCreate = async (ratingData) => {
   //   const newRating = await postRating(ratingData);
   //   setRatings((prevState) => [...prevState, newRating]);
   //   // history.push('/wines');
   // };
-  // const handleRatingEdit = async (id, ratingData) => {
-  //   const updatedRating = await putRating(id, ratingData);
-  //   setRatings((prevState) =>
-  //     prevState.map((rating) => {
-  //       return rating.id === Number(id) ? updatedRating : rating;
-  //     })
-  //   );
-  //   history.push('/wines');
-  // };
+  const handleRatingEdit = async (ratingData, id, wiID) => {
+    await putRating(ratingData, id);
+    setToggle(prev => !prev)
+    history.push(`/wine-details/${wiID}`);
+  };
+
+  const handRatingDelete = async (id) => {
+    await deleteRating(id);
+    setToggle((prev) => !prev);
+  };
 
 
   return (
     <Switch>
-      <Route exact path='/wines'>
-        <Wines wines={wines}/>
-      </Route>
       <Route path='/wine-details/:id'>
-        <WineDetails />
+        <WineDetails toggle={toggle} handleRatingDelete={ handRatingDelete}/>
+      </Route>
+      <Route path='/wines'>
+        <Wines wines={wines} />
       </Route>
       <Route path='/ratings/:id/new'>
-        <RatingCreate  />
+        <RatingCreate />
       </Route>
       <Route path='/ratings/:id/edit'>
-        {/* <RatingEdit ratings={ratings} handeRatingEdit={handleRatingEdit} /> */}
+        <RatingEdit handleRatingEdit={handleRatingEdit} />
       </Route>
     </Switch>
   )

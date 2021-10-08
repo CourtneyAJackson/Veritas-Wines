@@ -1,7 +1,7 @@
 import api from './config'
 
 export const getAllRatings = async () => {
-  const res = await api.get('/ratings')
+  const res = await api.get('./ratings')
   return res.data
 }
 
@@ -21,8 +21,8 @@ export const deleteRating = async (id) => {
   return resp;
 };
 
-export const putRating = async (id, ratingData) => {
-  const resp = await api.put(`//${id}`, { rating: ratingData });
+export const putRating = async (ratingData, id) => {
+  const resp = await api.put(`/ratings/${id}`, { rating: ratingData });
   return resp.data;
 };
 

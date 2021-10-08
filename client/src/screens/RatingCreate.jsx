@@ -10,7 +10,6 @@ function RatingCreate(props) {
   const [wineItem, setWineItem] = useState(null);
   const [selectedRating, setSelectedRating] = useState('');
   const { id } = useParams();
-  // const { wines } = props;
   let history = useHistory()
 
   useEffect(() => {
@@ -46,7 +45,6 @@ function RatingCreate(props) {
         `<select 
           className="rating-create"
           placeholder='Category'
-          // value={formData.rank}
           name='rank'
           required
           onChange={handleChange}

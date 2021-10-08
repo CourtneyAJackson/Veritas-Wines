@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :wines, only: [:index, :show] do
   resources :ratings, shallow: true
     end
+    
   # post '/ratings/:wine_id/new', to: 'ratings#create'
 end

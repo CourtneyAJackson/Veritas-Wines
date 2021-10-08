@@ -20,6 +20,7 @@ function Wines(props) {
                />
             ))}
             <button><Link to= {`wine-details/${wine.id}`}>Details</Link></button>
+            <button><Link to= {`wine-details/${wine.id}`}>Details</Link></button>
           </>
         ))
       }

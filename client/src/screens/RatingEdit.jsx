@@ -1,60 +1,77 @@
 import { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
+import { putRating, getOneRating } from '../services/ratings';
 
-
-function RatingEdit(props) {
+export default function RatingEdit(props) {
+ const [wineId, setWineId] = useState(null);
   const [formData, setFormData] = useState({
     rank: '',
   });
+
   const { id } = useParams();
+  let history = useHistory()
+  
+  // const [updatedRating, setUpdatedRating] = useState('');
+ 
 
   useEffect(() => {
-    const prefillFormData = () => {
-      const singleRating= props.ratings.find(rating=> rating.id === Number(id) )
-      setFormData({
-        name: singleRating,
-      });
-    }
-    if (props.ratings.length) {
-      prefillFormData();
-    }
-  }, [props.ratings, id]);
+    const fetchRating = async () => {
+      const rankData = await getOneRating(id);
+      setWineId(rankData.wine_id) 
+      setFormData((prev)  => ({
+         ...prev,
+          rank: rankData.rank
+      }));
+    };
+    fetchRating();
+  }, [id]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    const { value } = e.target;
+    // setUpdatedRating(value)
+    setFormData((prev)  => ({
+      ...prev,
+       rank: value
+   }));
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newRating = await putRating(formData, id);
+    // setWineItem(oneWineItem);
+    history.push(`/wine-details/${id}`)
   };
+
+
   return (
     <>
       <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        props.handleRatingEdit(id, formData);
-      }}
-    >
-     <select
-          className="rating-create"
+        onSubmit={(e) => {
+          e.preventDefault()
+          props.handleRatingEdit(formData, id, wineId)
+        }}>
+        <select
+          className="rating-edit"
           placeholder='Category'
           value={formData.rank}
           name='rank'
           required
           onChange={handleChange}
         >
-          <option value='' defaultValue>Select</option>
+          <option value={formData.rank} defaultValue>{ formData.rank }</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
           <option value='4'>4</option>
-          <option value='4'>5</option>
+          <option value='5'>5</option>
         </select>
         <button>Submit</button>
-    </form>
+      </form>
     </>
-    
+    // (e) => {
+    //         e.preventDefault();
+    //         props.handleRatingEdit(id, formData);
+    //       }}
   )
 }
-
-export default RatingEdit
