@@ -1,4 +1,5 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import StarRatings from 'react-star-ratings'
 
 function Wines(props) {
  
@@ -11,8 +12,14 @@ function Wines(props) {
             <img src={wine.img} alt='Wine Bottle' />
             <p>{wine.name}</p>
             <p>{wine.year}</p>
-            <p>{wine.ratings.rank}</p>
-            <button><Link to= {`wineDetails/${wine.id}`}>Details</Link></button>
+            {wine.ratings.map((rating) => (
+                 <StarRatings
+                 rating={Number(rating.rank)}
+                 starDimension="40px"
+                 starSpacing="15px"
+               />
+            ))}
+            <button><Link to= {`wine-details/${wine.id}`}>Details</Link></button>
           </>
         ))
       }
