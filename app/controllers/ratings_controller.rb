@@ -5,7 +5,7 @@ class RatingsController < ApplicationController
   #GET /ratings
   def index 
     @ratings = Rating.all
-    render json: @ratings
+    render json: @ratings, include: :wines
   end
 
   #GET /ratings/1

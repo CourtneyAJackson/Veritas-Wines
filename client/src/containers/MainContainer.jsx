@@ -59,7 +59,7 @@ function MainContainer() {
       <Route path='/wine-details/:id'>
         <WineDetails ratings={ratings} />
       </Route>
-      <Route path='wines/:id/ratings/new'>
+      <Route path='ratings-new'>
         <RatingCreate handleRatingCreate={handleRatingCreate} />
       </Route>
       <Route path='/ratings/:id/edit'>

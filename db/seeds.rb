@@ -27,9 +27,12 @@ User.destroy_all
  @wines9 = Wine.create!({name: 'Belle Glos Pinot Noir Clark and Telephone', year: '2019', price: '49.99', description: 'Santa Maria Valley, Santa Barbara, CA- Aromas of plum, brown spice turn to sweet caramel. Flavors extend on the bouquet, leading to cranberry, spice and blackberry. The firm acidity and soft tannins make this a sure winner. A perfect combination of old and new world styles. Vegan', img: 'https://www.totalwine.com/dynamic/x490,sq/media/sys_master/twmmedia/h68/h37/13213275553822.png'})
  
  Rating.create!({ rank: '5', user: @user1, wine: @wines1})
- Rating.create!({ rank: '3', user: @user1, wine: @wines1})
- Rating.create!({ rank: '1', user: @user1, wine: @wines1})
- Rating.create!({ rank: '5', user: @user1, wine: @wines1})
+ Rating.create!({ rank: '3', user: @user1, wine: @wines3})
+ Rating.create!({ rank: '1', user: @user1, wine: @wines4})
+ Rating.create!({ rank: '5', user: @user1, wine: @wines5})
+ Rating.create!({ rank: '2', user: @user1, wine: @wines6})
+ Rating.create!({ rank: '4', user: @user1, wine: @wines7})
+ Rating.create!({ rank: '3', user: @user1, wine: @wines8})
 
 puts "#{Wine.count} wines created!"
 
