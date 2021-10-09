@@ -1,10 +1,16 @@
+import './Layout.css'
+import Footer from '../../components/Footer.jsx'
 import {Link} from 'react-router-dom'
+
+
 
 function Layouts(props) {
   return (
     <div>
-      <header>
-        <h1>Veritas Wines</h1>
+      {/* <Nav user={props.user}/> */}
+      <header className="nav-bar">
+        <div className='nav-item'>
+        <h1>Veritas</h1>
         <Link to='/wines'>Our Collection</Link>
         {
           props.currentUser ?
@@ -22,8 +28,10 @@ function Layouts(props) {
           <Link to='/wines'>Our Collection</Link>
           </>
         }
+        </div>
       </header>
       {props.children}
+      {/* <Footer/> */}
     </div>
   )
 }

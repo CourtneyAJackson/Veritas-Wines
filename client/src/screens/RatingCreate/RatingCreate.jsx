@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useHistory } from 'react-router';
-import {postRating } from '../services/ratings';
-import {getOneWine } from '../services/wines'
+import {postRating } from '../../services/ratings';
+import {getOneWine } from '../../services/wines'
 
 
 function RatingCreate(props) {
@@ -35,7 +35,7 @@ function RatingCreate(props) {
     const oneWineItem = await postRating(fullRating, id);
     setWineItem(oneWineItem);
     console.log(wineItem)
-    history.push(`/wine-details/${id}`)
+    history.push(`/wine-details/${wineItem.id}`)
   };
 
 

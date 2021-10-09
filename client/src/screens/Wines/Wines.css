@@ -1,0 +1,20 @@
+body{
+  background: black;
+}
+
+
+.card-container{
+  display: flex;
+  justify-content: center;
+}
+
+.wine-card{
+  background: white;
+ 
+}
+
+.wine-img{
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

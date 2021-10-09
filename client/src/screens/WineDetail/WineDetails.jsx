@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { getOneWine } from "../services/wines"
+import { getOneWine } from "../../services/wines"
 import { Link } from 'react-router-dom'
 import StarRatings from "react-star-ratings"
 
@@ -50,8 +50,9 @@ export default function WineDetails(props) {
           </button>
           </div>
          ))}
-        <Link to={`/ratings/${wineInfo.id}/new`}>Add a Rating</Link>
-      
+        {/* <button>
+          <Link to={`/ratings/${id}/new`}>Add a Rating</Link>
+      </button> */}
       <img src={wineInfo.img} />
     </div>
   )

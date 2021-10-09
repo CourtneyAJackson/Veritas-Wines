@@ -3,10 +3,11 @@ import { useHistory } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 import { getAllRatings, postRating, putRating, updatedRating, deleteRating } from '../services/ratings.js'
 import { getAllWines } from '../services/wines.js'
-import Wines from '../screens/Wines.jsx'
-import WineDetails from '../screens/WineDetails.jsx'
-import RatingCreate from '../screens/RatingCreate.jsx'
-import RatingEdit from '../screens/RatingEdit.jsx'
+import Wines from '../screens/Wines/Wines.jsx'
+import WineDetails from '../screens/WineDetail/WineDetails.jsx'
+import RatingCreate from '../screens/RatingCreate/RatingCreate.jsx'
+import RatingEdit from '../screens/RatingEdit/RatingEdit.jsx'
+import Home from '../screens/Home/Home.jsx'
 
 
 
@@ -54,6 +55,9 @@ function MainContainer() {
 
   return (
     <Switch>
+      <Route path='/home'>
+          <Home/>
+        </Route>
       <Route path='/wine-details/:id'>
         <WineDetails toggle={toggle} handleRatingDelete={ handRatingDelete}/>
       </Route>

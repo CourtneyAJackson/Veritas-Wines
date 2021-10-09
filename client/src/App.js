@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import './App.css';
 
-import Layout from './layouts/Layout';
-import LogIn from './screens/LogIn';
-import Register from './screens/Register';
+import Layout from './components/layouts/Layout';
+import LogIn from './screens/Login/LogIn';
+import Register from './screens/Register/Register';
 import MainContainer from './containers/MainContainer';
 
 import {

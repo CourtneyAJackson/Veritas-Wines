@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { putRating, getOneRating } from '../services/ratings';
+import { putRating, getOneRating } from '../../services/ratings';
 
 export default function RatingEdit(props) {
  const [wineId, setWineId] = useState(null);
