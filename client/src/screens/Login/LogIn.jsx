@@ -16,33 +16,52 @@ export default function Login(props) {
   };
 
   return (
+    <div className="form-container">
+    <div className="outter-container">
+      <div className="form-sign-in-container">
+        <h1 className="signInLabel">Sign In</h1>
     <form onSubmit={(e)=> {
       e.preventDefault();
       props.handleLogin(formData);
-    }}>
-      <h3>Login</h3>
-      <label>
+          }}>
+           
+      <h3 className='login-label'>Login</h3>
+            <div className='username-input'>
+              <label>
         Username:
-        <input
+      </label>
+      <input
           type='text'
           name='username'
           value={formData.username}
           onChange={handleChange}
         />
-      </label>
+      </div>
       <br />
+      <div className='pw-input'>
       <label>
         Password:
-        <input
+      </label>
+      <input
           type='password'
           name='password'
           value={formData.password}
           onChange={handleChange}
         />
-      </label>
+      </div>
       <br />
       <Link to='/register'>Register</Link>
-      <button>Submit</button>
-    </form>
+      <button className='form-button'>Submit</button>
+          </form>
+        </div>
+        <div className='wine-img'>
+          <img
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uc9w1m2QuCUxXuD6-Qp1LP-5QwgG2s5r5w&usqp=CAU'
+          alt='grapes'
+          />
+          </div>
+
+      </div>
+      </div>
   );
 }

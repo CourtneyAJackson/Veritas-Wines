@@ -42,6 +42,7 @@ function RatingCreate(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        
         `<select 
           className="rating-create"
           placeholder='Category'

@@ -1,25 +1,58 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getOneWine } from "../../services/wines"
-import { Link } from 'react-router-dom'
+import Button from '@mui/material/Button'
 import StarRatings from "react-star-ratings"
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Typography from '@mui/material/Typography';
+// import { StylesProvider, createGenerateClassName } from '@mui/material/styles';
+// import { makeStyles } from "@mui/styles"
+// import Paper from "@material-ui/core/Paper";
+// import Grid from "@material-ui/core/Grid";
 
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345,
+//   },
+//   media: {
+//     height: 340,
+//   }
+// })
+
+// const styles = 
+// {
+
+// media: {
+//   height: 0,
+//   paddingTop: '56.25%', // 16:9,
+//   marginTop:'30'
+// }
+// };
+
+// const useStylesGrid = makeStyles((theme) => ({
+//   gridPaper: {
+//     padding: 5,
+//     textAlign: "center",
+//     backgroundColor: "#EEE0D0",
+//   },
+// }));
 
 export default function WineDetails(props) {
 
+  // const classesGrid = useStylesGrid();
 
+  // const classes = useStyles()
   const [wineInfo, setWineInfo] = useState(null)
-  // const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
-  // const { ratings } = props
-  // console.log(ratings)
-  // const [selectedRating, setSelectedRating] = useState('')
+
 
   useEffect(() => {
     const fetchOneWine = async () => {
       const wineData = await getOneWine(id)
       setWineInfo(wineData)
-      // setLoaded(true)
       console.log(wineData)
     }
     fetchOneWine()
@@ -30,30 +63,60 @@ export default function WineDetails(props) {
   }
 
   return (
-    <div>
+    <div className='wine-card-container'>
+      {/* <Grid item m>
+      <Paper className={classesGrid.gridPaper} variant="outlined" elevation={3}>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardActions>
+          <CardMedia componenet="img" image= title="wine bottle" style={{height: 0, paddingTop: '56.25%'}} />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2" > */}
+      <div className='wine-card'>
+      <img src={wineInfo.img}
+        alt='wine bottle'
+      />
       <p>{wineInfo.name}</p>
       <p>{wineInfo.year}</p>
       <p>{`$${wineInfo.price}.00`}</p>
+      {/* </Typography>
+            <Typography variant="body2" color="textSecondary" component="p"> */}
       <p>{wineInfo.description}</p>
+      {/* </Typography>
+          </CardContent>
+        </CardActions> */}
+
       {wineInfo.ratings.map((rating) => (
         <div>
-                 <StarRatings
-                 rating={Number(rating.rank)}
-                 starDimension="40px"
-                 starSpacing="15px"
+          <StarRatings
+            rating={Number(rating.rank)}
+            starDimension="40px"
+            starSpacing="15px"
           />
-          <button>
-              <Link to={`/ratings/${rating.id}/edit`}>Edit Rating</Link>
-          </button>
-          <button onClick={() =>props.handleRatingDelete(rating.id)}>
+          <Button
+            href={`/ratings/${rating.id}/edit`}
+            size="small"
+            color="secondary">
+            Edit Rating
+          </Button>
+          {/* <button>
+              <Link to={`/ratings/${rating.id}/edit`}></Link>
+            </button> */}
+          <Button
+            size="small"
+            color="secondary"
+            onClick={() => props.handleRatingDelete(rating.id)}>
             Delete
-          </button>
-          </div>
-         ))}
-        {/* <button>
+          </Button>
+        </div>
+     
+      ))}
+      </div>
+      {/* <button>
           <Link to={`/ratings/${id}/new`}>Add a Rating</Link>
       </button> */}
-      <img src={wineInfo.img} />
-    </div>
+    {/* </Card>
+      </Paper >
+  </Grid > */}
+    </div >
   )
 }

@@ -51,6 +51,7 @@ export default function RatingEdit(props) {
           e.preventDefault()
           props.handleRatingEdit(formData, id, wineId)
         }}>
+        <h2>Please select a rating below</h2>
         <select
           className="rating-edit"
           placeholder='Category'

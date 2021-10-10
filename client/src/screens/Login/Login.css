@@ -1,0 +1,96 @@
+.form-container {
+  height: 100vh;
+  background: #9da27a;
+}
+
+.wine-img {
+  display: flex;
+  justify-content: center;
+  /* background: yellow; */
+  flex-direction: column;
+}
+
+.form-sign-in-container {
+  align-self: center;
+  padding: 1em;
+  width: 50%;
+  height: 80%;
+  margin: 4em auto;
+  border: 2px solid #b0bec5;
+  border-radius: 6px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  background: #121403;
+}
+
+.form-sign-in-container h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.form-sign-in-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+.form-sign-in-container form input {
+  width: 100%;
+  padding: 0.6em 1em;
+  margin: 0.5em auto;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: 2px solid #e0e0e0;
+  outline: none;
+  transition: all 0.4s ease;
+  background-color: lightgrey;
+}
+
+.form-sign-in-container form input:focus,
+.form-sign-in-container form input:active {
+  border: 2px solid #82ada9;
+}
+
+.form-button {
+  width: 50%;
+  margin: 1em auto;
+  background: goldenrod;
+}
+
+.form-sign-in-container form-button:hover {
+  box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.form-sign-in-container form a {
+  margin: auto;
+}
+
+.form-sign-in-container form label {
+  margin-top: 0.6em;
+}
+
+.outter-container {
+  display: flex;
+  flex-direction: row-reverse;
+  background: #9da27a;
+  margin-top: 8%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  position: inherit;
+  padding-right: 80px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 2s ease;
+}
+
+.form-sign-in-container label {
+  font-size: 15px;
+}
+
+@media all and (min-width: 350px) and (max-width: 900px) {
+  .outter-container {
+    flex-direction: column-reverse;
+  }
+}

@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import './App.css';
+import './index.css'
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import { ClassNames } from '@emotion/react';
+import { makeStyles } from '@material-ui/core';
+
 
 import Layout from './components/layouts/Layout';
 import LogIn from './screens/Login/LogIn';
@@ -58,7 +68,26 @@ function App() {
             <MainContainer />
           </Route>
         </Switch>
+      
+      {/* <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Veritas Wines
+          </Typography>
+            <Button href={'/login'} color="inherit">Login</Button>
+            
+            <Button href={'/register'} color="inherit">Register</Button>
+            <Button href={ '/wines'}size ="small" color="inherit">Our Collection</Button>
+          </Toolbar>
+      </AppBar>
+      </Box>
+      <Box >
+        <Box>box</Box>
+        </Box> */}
       </Layout>
+   
+      
     </div>
   );
 }
