@@ -1,0 +1,56 @@
+.wine-detail-container{
+  width: 90%;
+  margin:50px auto;
+  background: black;
+}
+
+.wine-card-container{
+  display:flex;
+  /* flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap; */
+  justify-content: center;
+  align-items: center;
+  /* display: flex; */
+
+}
+
+.detail-card{
+  width:35%;
+  background: white;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  /* height: auto; */
+  margin: auto;
+  padding: 30px;
+}
+
+.wine-detail-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+  background: white;
+  margin-top: 30px;
+}
+
+.detail-paragraph{
+  margin: auto;
+  ;
+}
+
+.detail-info{
+  border: solid;
+}
+.detail-price{
+
+}
+
+.detail-name{
+
+}
+
+.detil-year{
+
+}

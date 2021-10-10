@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { getOneWine } from "../../services/wines"
+import './WineDetail.css'
 import Button from '@mui/material/Button'
 import StarRatings from "react-star-ratings"
+import { Box } from "@mui/system"
+
 // import Card from '@mui/material/Card';
 // import CardActions from '@mui/material/CardActions';
 // import CardContent from '@mui/material/CardContent';
@@ -72,55 +75,64 @@ export default function WineDetails(props) {
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2" > */}
       <div className='wine-card-continer'>
-        <div className="detail-card"> 
-      <img className='wine-detail-img'src={wineInfo.img}
-        alt='wine bottle'
-        />
-        <div className='detail-info'>
-      <p>{wineInfo.name}</p>
-      <p>{wineInfo.year}</p>
-      <p>{`$${wineInfo.price}.00`}</p>
-      {/* </Typography>
+        <div className="detail-card">
+          <img className='wine-detail-img' src={wineInfo.img}
+            alt='wine bottle'
+          />
+          <div className='detail-info'>
+            <p className="detail-name">{wineInfo.name}</p>
+            <p className="detail-year">{wineInfo.year}</p>
+            <p className="detail-price">{`$${wineInfo.price}.00`}</p>
+            {/* </Typography>
             <Typography variant="body2" color="textSecondary" component="p"> */}
-      <p>{wineInfo.description}</p>
-      {/* </Typography>
+            <p className="detail-paragraph">{wineInfo.description}</p>
+            {/* </Typography>
           </CardContent>
         </CardActions> */}
+          </div>
+          {wineInfo.ratings.map((rating) => (
+            <>
+              <StarRatings
+                rating={Number(rating.rank)}
+                starDimension="40px"
+                starSpacing="15px"
+              />
+              <Box display="flex" justifyContent="space-around">
+                <Button
+                  size="small"
+                  sx={{ borderRadius: 10 }}
+                  style={{ border: '2px solid' }}
+                  href={`/ratings/${rating.id}/edit`}
+                  size="small"
+                  varient='contained'
+                  color="primary">
 
-      {wineInfo.ratings.map((rating) => (
-        <>
-          <StarRatings
-            rating={Number(rating.rank)}
-            starDimension="40px"
-            starSpacing="15px"
-          />
-          <Button
-            href={`/ratings/${rating.id}/edit`}
-            size="small"
-            color="secondary">
-            Edit Rating
-          </Button>
-          {/* <button>
+                  Edit Rating
+                </Button>
+                {/* <button>
               <Link to={`/ratings/${rating.id}/edit`}></Link>
             </button> */}
-          <Button
-            size="small"
-            color="secondary"
-            onClick={() => props.handleRatingDelete(rating.id)}>
-            Delete
-          </Button>
-        
-       
-       </>
-     
-      ))}
-          </div>
+                <Button
+                  size="small"
+                  sx={{ borderRadius: 10 }}
+                  style={{ border: '2px solid' }}
+                  size="small"
+                  color="secondary"
+                  onClick={() => props.handleRatingDelete(rating.id)}>
+                  Delete
+                </Button>
+              </Box>
+
+            </>
+
+          ))}
+
         </div>
       </div>
       {/* <button>
           <Link to={`/ratings/${id}/new`}>Add a Rating</Link>
       </button> */}
-    {/* </Card>
+      {/* </Card>
       </Paper >
   </Grid > */}
     </div >
