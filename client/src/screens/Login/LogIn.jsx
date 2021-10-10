@@ -55,12 +55,12 @@ export default function Login(props) {
       <button className='form-button'>Submit</button>
           </form>
         </div>
-        <div className='wine-img'>
-          <img
+          
+          <img className='wine-img'
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uc9w1m2QuCUxXuD6-Qp1LP-5QwgG2s5r5w&usqp=CAU'
           alt='grapes'
           />
-          </div>
+          
 
       </div>
       </div>

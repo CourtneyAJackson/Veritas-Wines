@@ -10,6 +10,11 @@ function Home() {
       /> */}
       <header className='homepage-image'>
         Veitas wines
+        <img className='logo'
+          src=''/>
+          
+
+
       </header>
       <Box>
       <Button

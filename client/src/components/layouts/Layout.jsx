@@ -1,5 +1,5 @@
 import './Layout.css'
-import Footer from '../../components/Footer.jsx'
+import Footer from './Footer/Footer.jsx'
 import { Link } from 'react-router-dom'
 
 

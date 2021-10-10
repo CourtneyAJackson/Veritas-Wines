@@ -1,14 +1,15 @@
-.form-container {
+.form-sign-in-container {
   height: 100vh;
-  background: #9da27a;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uc9w1m2QuCUxXuD6-Qp1LP-5QwgG2s5r5w&usqp=CAU);
+  
 }
 
-.wine-img {
+/* .wine-img {
   display: flex;
   justify-content: center;
-  /* background: yellow; */
+  
   flex-direction: column;
-}
+} */
 
 .form-sign-in-container {
   align-self: center;
@@ -73,7 +74,6 @@
 .outter-container {
   display: flex;
   flex-direction: row-reverse;
-  background: #9da27a;
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
