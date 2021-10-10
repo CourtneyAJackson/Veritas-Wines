@@ -1,12 +1,14 @@
 import './Home.css'
 import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
 
 function Home() {
   return (
     <div>
-      <img src='https://ak.picdn.net/shutterstock/videos/23932171/thumb/10.jpg'
+      <img className='homepage-image' src='https://ak.picdn.net/shutterstock/videos/23932171/thumb/10.jpg'
         alt='wine glass'
       />
+      <Box>
       <Button
         href='/wines'
         style={{
@@ -17,13 +19,17 @@ function Home() {
         size='large'
       >
         Explore Our Collection
-      </Button>
+        </Button>
+      </Box>
       <h1>home page</h1>
 
       <button>Explore our collection</button>
       <button>Sign In</button>
       <button>Register</button>
+      
+      
       <div className="wine-of-month-details">
+        
          <img className="wine-of-the-month" src='https://wineparity.com/wp-content/uploads/2021/02/2017-Markham-Merlot-300x300.png'
           alt='wine of the month'      
           />

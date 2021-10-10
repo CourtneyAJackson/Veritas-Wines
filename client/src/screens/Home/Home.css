@@ -3,4 +3,22 @@
   width: 50%;
   border: solid;
   margin: 0 44%;
+  align-items: center;
+}
+
+.wine-of-the-month{
+  max-width: 100%;
+  flex-basis: 50%;
+}
+
+.wine-of-the-month-paragraph{
+  margin-right: 120px;
+  margin-top: auto;
+}
+
+.homepage-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+ 
 }
