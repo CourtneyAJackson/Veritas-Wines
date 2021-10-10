@@ -5,9 +5,12 @@ import Box from '@mui/material/Box'
 function Home() {
   return (
     <div>
-      <img className='homepage-image' src='https://ak.picdn.net/shutterstock/videos/23932171/thumb/10.jpg'
+      {/* <img className='homepage-image' src='https://ak.picdn.net/shutterstock/videos/23932171/thumb/10.jpg'
         alt='wine glass'
-      />
+      /> */}
+      <header className='homepage-image'>
+        Veitas wines
+      </header>
       <Box>
       <Button
         href='/wines'

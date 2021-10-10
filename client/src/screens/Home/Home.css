@@ -17,8 +17,12 @@
 }
 
 .homepage-image{
-  background-size: cover;
+ flex-flow: wrap;
+  background-image: url(https://ak.picdn.net/shutterstock/videos/23932171/thumb/10.jpg);  
+  height: 200px;
+  padding-top: 100px;
+  margin-bottom: 150px;
   background-repeat: no-repeat;
   background-position: center center;
- 
-}
+  background-size: cover;
+  }
