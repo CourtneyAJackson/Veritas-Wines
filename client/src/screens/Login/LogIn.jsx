@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import "./Login.css"
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -15,10 +16,10 @@ export default function Login(props) {
     }));
   };
 
-  return (
-    <div className="form-container">
-    <div className="outter-container">
-      <div className="form-sign-in-container">
+  return (<div className="outter-container">
+    <div className="form-signin-container">
+    
+      <div className="form-container">
         <h1 className="signInLabel">Sign In</h1>
     <form onSubmit={(e)=> {
       e.preventDefault();
