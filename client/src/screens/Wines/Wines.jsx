@@ -51,21 +51,23 @@ function Wines(props) {
                   ))}
                   <Box display="flex" justifyContent="space-between">
                     <Button
-                      sx={ { borderRadius: 28 } }
+                      size="small"
+                      sx={ { borderRadius: 10} }
                     style={{ border: '2px solid' }}
                     className='add-rating'
                     href={`wine-details/${wine.id}/new`}
-                    color='secondary'
-                    variant='conatined'
+                    color='primary'
+                    variant='contained'
                   >
                     Add a Rating
 
                   </Button>
                     <Button
-                      sx={ { borderRadius: 28 } }
+                    size="small"
+                    sx={ { borderRadius: 10 } }
                     style={{ border: '2px solid' }}
                     href={`wine-details/${wine.id}`}
-                    color='primary'
+                    color='secondary'
                     variant='conatined'
                   >
                     Wine Details

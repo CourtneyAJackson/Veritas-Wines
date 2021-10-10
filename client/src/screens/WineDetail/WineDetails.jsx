@@ -63,7 +63,7 @@ export default function WineDetails(props) {
   }
 
   return (
-    <div className='wine-card-container'>
+    <div className='wine-detail-container'>
       {/* <Grid item m>
       <Paper className={classesGrid.gridPaper} variant="outlined" elevation={3}>
       <Card sx={{ maxWidth: 345 }}>
@@ -71,10 +71,12 @@ export default function WineDetails(props) {
           <CardMedia componenet="img" image= title="wine bottle" style={{height: 0, paddingTop: '56.25%'}} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2" > */}
-      <div className='wine-card'>
-      <img src={wineInfo.img}
+      <div className='wine-card-continer'>
+        <div className="detail-card"> 
+      <img className='wine-detail-img'src={wineInfo.img}
         alt='wine bottle'
-      />
+        />
+        <div className='detail-info'>
       <p>{wineInfo.name}</p>
       <p>{wineInfo.year}</p>
       <p>{`$${wineInfo.price}.00`}</p>
@@ -86,7 +88,7 @@ export default function WineDetails(props) {
         </CardActions> */}
 
       {wineInfo.ratings.map((rating) => (
-        <div>
+        <>
           <StarRatings
             rating={Number(rating.rank)}
             starDimension="40px"
@@ -107,9 +109,13 @@ export default function WineDetails(props) {
             onClick={() => props.handleRatingDelete(rating.id)}>
             Delete
           </Button>
-        </div>
+        
+       
+       </>
      
       ))}
+          </div>
+        </div>
       </div>
       {/* <button>
           <Link to={`/ratings/${id}/new`}>Add a Rating</Link>
