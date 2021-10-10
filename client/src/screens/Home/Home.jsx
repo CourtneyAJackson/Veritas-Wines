@@ -1,3 +1,4 @@
+import './Home.css'
 import Button from '@mui/material/Button'
 
 function Home() {
@@ -27,7 +28,7 @@ function Home() {
           alt='wine of the month'      
           />
           <h1 className='wine-of-the-title'>Wine of the Month!</h1>
-        <p className='wine-of-the-month-details'>The fruit for this Merlot was sourced from California’s renowned Central Coast vineyards, where a cool climate slows the pace of ripening, allowing the grapes to develop rich flavor and deep, concentrated color. This wine opens with aromas of black cherry, Asian plum and cranberry supported by hints of black olive, tea leaf and baking spices. Mocha, brown sugar and sweet oak round out the nose, while the palate brims with dark ripe cherry, Marion berry and plum flavors. Oak aging lends sweet toast and brown sugar notes to the lingering finish.</p>
+        <p className='wine-of-the-month-paragraph'>The fruit for this Merlot was sourced from California’s renowned Central Coast vineyards, where a cool climate slows the pace of ripening, allowing the grapes to develop rich flavor and deep, concentrated color. This wine opens with aromas of black cherry, Asian plum and cranberry supported by hints of black olive, tea leaf and baking spices. Mocha, brown sugar and sweet oak round out the nose, while the palate brims with dark ripe cherry, Marion berry and plum flavors. Oak aging lends sweet toast and brown sugar notes to the lingering finish.</p>
    
       </div>
     </div>
