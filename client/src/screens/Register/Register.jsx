@@ -16,12 +16,16 @@ export default function Register(props) {
   };
 
   return (
+    <div className="outter-registration-container">
+    <div className="form-register-container">
+      <div className="register-container">
     <form
       onSubmit={(e) => {
         e.preventDefault();
         props.handleRegister(formData);
       }}
-    >
+          >
+            <div className
       <h3>Register</h3>
       <label>
         Username:
@@ -54,6 +58,9 @@ export default function Register(props) {
       </label>
       <br />
       <button>Submit</button>
-    </form>
+          </form>
+        </div>
+      </div>
+      </div>
   );
 }

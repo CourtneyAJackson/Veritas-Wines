@@ -89,44 +89,47 @@ export default function WineDetails(props) {
             {/* </Typography>
           </CardContent>
         </CardActions> */}
-          </div>
-          {wineInfo.ratings.map((rating) => (
-            <>
-              <StarRatings
-                rating={Number(rating.rank)}
-                starDimension="40px"
-                starSpacing="15px"
-              />
-              <Box display="flex" justifyContent="space-around">
-                <Button
-                  size="small"
-                  sx={{ borderRadius: 10 }}
-                  style={{ border: '2px solid' }}
-                  href={`/ratings/${rating.id}/edit`}
-                  size="small"
-                  varient='contained'
-                  color="primary">
 
-                  Edit Rating
-                </Button>
-                {/* <button>
+            {wineInfo.ratings.map((rating) => (
+              <div>
+
+                <StarRatings
+                  rating={Number(rating.rank)}
+                  starDimension="40px"
+                  starSpacing="15px"
+                />
+                <Box display="flex" justifyContent="space-around">
+                  <Button
+                    className='edit-button'
+                    size="small"
+                    sx={{ borderRadius: 10 }}
+                    style={{ border: '2px solid' }}
+                    href={`/ratings/${rating.id}/edit`}
+                    size="small"
+                    varient='contained'
+                    color="primary">
+
+                    Edit Rating
+                  </Button>
+                  {/* <button>
               <Link to={`/ratings/${rating.id}/edit`}></Link>
             </button> */}
-                <Button
-                  size="small"
-                  sx={{ borderRadius: 10 }}
-                  style={{ border: '2px solid' }}
-                  size="small"
-                  color="secondary"
-                  onClick={() => props.handleRatingDelete(rating.id)}>
-                  Delete
-                </Button>
-              </Box>
+                  <Button
+                    className="delete-button"
+                    size="small"
+                    sx={{ borderRadius: 10 }}
+                    style={{ border: '2px solid' }}
+                    size="small"
+                    color="secondary"
+                    onClick={() => props.handleRatingDelete(rating.id)}>
+                    Delete
+                  </Button>
+                </Box>
 
-            </>
+              </div>
 
-          ))}
-
+            ))}
+          </div>
         </div>
       </div>
       {/* <button>

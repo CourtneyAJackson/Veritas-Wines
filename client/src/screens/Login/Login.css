@@ -1,17 +1,10 @@
-.form-sign-in-container {
+.form-container {
   height: 100vh;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uc9w1m2QuCUxXuD6-Qp1LP-5QwgG2s5r5w&usqp=CAU);
+  
   
 }
 
-/* .wine-img {
-  display: flex;
-  justify-content: center;
-  
-  flex-direction: column;
-} */
-
-.form-sign-in-container {
+.form-container {
   align-self: center;
   padding: 1em;
   width: 50%;
@@ -19,16 +12,18 @@
   margin: 4em auto;
   border: 2px solid #b0bec5;
   border-radius: 6px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  background: #121403;
+  border: solid;
+  box-shadow: 2px 4px 3px lightgrey;
+  background: white;
+  margin-bottom: 245px;
 }
 
-.form-sign-in-container h1 {
+.form-container h1 {
   text-align: center;
   font-size: 40px;
 }
 
-.form-sign-in-container form {
+.form-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,22 +31,6 @@
   width: 80%;
 }
 
-.form-sign-in-container form input {
-  width: 100%;
-  padding: 0.6em 1em;
-  margin: 0.5em auto;
-  font-size: 1rem;
-  border-radius: 3px;
-  border: 2px solid #e0e0e0;
-  outline: none;
-  transition: all 0.4s ease;
-  background-color: lightgrey;
-}
-
-.form-sign-in-container form input:focus,
-.form-sign-in-container form input:active {
-  border: 2px solid #82ada9;
-}
 
 .form-button {
   width: 50%;
@@ -59,38 +38,33 @@
   background: goldenrod;
 }
 
-.form-sign-in-container form-button:hover {
-  box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
-}
 
-.form-sign-in-container form a {
+.form-container form a {
   margin: auto;
+  text-decoration: none;
 }
 
-.form-sign-in-container form label {
+.form-container form label {
   margin-top: 0.6em;
 }
 
-.outter-container {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-top: 8%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-  position: inherit;
-  padding-right: 80px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 2s ease;
+.form-sign-container {
+  align-self: center;
+  padding: 1em;
+  width: 50%;
+  height: 80%;
+  margin: 50px auto;
+  border: 2px solid #b0bec5;
+  border-radius: 6px;
+ 
 }
 
-.form-sign-in-container label {
+.form-container label {
   font-size: 15px;
 }
 
 @media all and (min-width: 350px) and (max-width: 900px) {
-  .outter-container {
+  .form-sign-in-container {
     flex-direction: column-reverse;
   }
 }

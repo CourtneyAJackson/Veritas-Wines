@@ -16,17 +16,17 @@ export default function Login(props) {
     }));
   };
 
-  return (<div className="outter-container">
+  return (
+    <div className="outter-container">
     <div className="form-signin-container">
-    
       <div className="form-container">
-        <h1 className="signInLabel">Sign In</h1>
+        <h1 className="signInLabel">Log In</h1>
     <form onSubmit={(e)=> {
       e.preventDefault();
       props.handleLogin(formData);
           }}>
            
-      <h3 className='login-label'>Login</h3>
+    
             <div className='username-input'>
               <label>
         Username:
@@ -56,10 +56,11 @@ export default function Login(props) {
           </form>
         </div>
           
-          <img className='wine-img'
-          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uc9w1m2QuCUxXuD6-Qp1LP-5QwgG2s5r5w&usqp=CAU'
-          alt='grapes'
-          />
+   
+        {/* <img className='wine-sign-in-pic'src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIh5VYkXxlpQADa_yDU8C2Kke_gonxpH_hbQ&usqp=CAU'
+        alt='wine image'
+        />
+          */}
           
 
       </div>
