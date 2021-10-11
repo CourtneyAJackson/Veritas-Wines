@@ -1,0 +1,63 @@
+.form-add-container {
+  align-self: center;
+  padding: 4em;
+  width: 50%;
+  height: 80%;
+  margin: 4em auto;
+  border: 2px solid #b0bec5;
+  border-radius: 6px;
+  box-shadow: 2px 4px 3px lightgrey;
+  background: white;
+  margin-bottom: 274px;
+ 
+}
+
+
+.rating-create{
+  margin-bottom: 35px;
+  height: 27px;
+  width: 150px;
+  margin-left: 32%;
+}
+
+.add-container h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.add-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+
+.add-button {
+  width: 50%;
+  margin: 1em auto;
+  background: goldenrod;
+}
+
+
+.add-container form a {
+  margin: auto;
+  text-decoration: none;
+}
+
+.add-container form label {
+  margin-top: 0.6em;
+}
+
+
+
+.add-container label {
+  font-size: 15px;
+}
+
+@media all and (min-width: 350px) and (max-width: 900px) {
+  .form-add-container {
+    flex-direction: column-reverse;
+  }
+}

@@ -55,11 +55,8 @@ function MainContainer() {
 
   return (
     <Switch>
-      <Route path='/home'>
-          <Home/>
-        </Route>
       <Route path='/wine-details/:id'>
-        <WineDetails toggle={toggle} handleRatingDelete={ handRatingDelete}/>
+        <WineDetails toggle={toggle} handleRatingDelete={handRatingDelete} />
       </Route>
       <Route path='/wines'>
         <Wines wines={wines} />
@@ -69,6 +66,9 @@ function MainContainer() {
       </Route>
       <Route path='/ratings/:id/edit'>
         <RatingEdit handleRatingEdit={handleRatingEdit} />
+      </Route>
+      <Route path='/home'>
+        <Home />
       </Route>
     </Switch>
   )

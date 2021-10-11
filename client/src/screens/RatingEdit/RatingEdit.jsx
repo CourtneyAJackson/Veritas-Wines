@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { putRating, getOneRating } from '../../services/ratings';
+import Button from "@mui/material/Button"
+import Box from '@mui/material/Box'
 
 export default function RatingEdit(props) {
  const [wineId, setWineId] = useState(null);
@@ -35,23 +37,26 @@ export default function RatingEdit(props) {
    }));
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const newRating = await putRating(formData, id);
-    // setWineItem(oneWineItem);
-    history.push(`/wine-details/${id}`)
-  };
+  //   const newRating = await putRating(formData, id);
+  //   // setWineItem(oneWineItem);
+  //   history.push(`/wine-details/${id}`)
+  
 
 
   return (
     <>
+    <div className="outter-edit-container">
+    <div className="form-eidt-container">
+      <div className="edit-container">
       <form
         onSubmit={(e) => {
           e.preventDefault()
           props.handleRatingEdit(formData, id, wineId)
         }}>
-        <h2>Please select a rating below</h2>
+        <h2 className="edit-title">Please select a rating below.</h2>
         <select
           className="rating-edit"
           placeholder='Category'
@@ -66,13 +71,24 @@ export default function RatingEdit(props) {
           <option value='3'>3</option>
           <option value='4'>4</option>
           <option value='5'>5</option>
-        </select>
-        <button>Submit</button>
-      </form>
+              </select>
+              {/* <Box display="flex" justifyContent="space-around">
+        <Button size="small"
+                    // sx={ { borderRadius: 10 } }
+                    style={{ border: '2px solid' }}
+                    // href={`/wine-details/${id}`}
+                    color='secondary'
+                  variant='conatined'
+                   onClick={handleSubmit}
+              >Submit
+                </Button>
+                </Box> */}
+              <button >SUBMIT</button>
+          </form>
+        </div>
+      </div>
+      </div>
     </>
-    // (e) => {
-    //         e.preventDefault();
-    //         props.handleRatingEdit(id, formData);
-    //       }}
+   
   )
 }

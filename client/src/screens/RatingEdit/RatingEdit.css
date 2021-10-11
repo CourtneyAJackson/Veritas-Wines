@@ -1,0 +1,74 @@
+.form-container {
+  height: 100vh;
+  
+  
+}
+
+.form-container {
+  align-self: center;
+  padding: 1em;
+  width: 50%;
+  height: 80%;
+  margin: 4em auto;
+  border: 2px solid #b0bec5;
+  border-radius: 6px;
+  border: solid;
+  box-shadow: 2px 4px 3px lightgrey;
+  background: white;
+  margin-bottom: 245px;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+
+.form-button {
+  width: 50%;
+  margin: 1em auto;
+  background: goldenrod;
+}
+
+
+.form-container form a {
+  margin: auto;
+  text-decoration: none;
+}
+
+.form-container form label {
+  margin-top: 0.6em;
+}
+
+.form-sign-container {
+  align-self: center;
+  padding: 1em;
+  width: 50%;
+  height: 80%;
+  margin: 50px auto;
+  border: 2px solid #b0bec5;
+  border-radius: 6px;
+ 
+}
+
+.form-container label {
+  font-size: 15px;
+}
+
+.rating-edit{
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 350px) and (max-width: 900px) {
+  .form-sign-in-container {
+    flex-direction: column-reverse;
+  }
+}

@@ -2,7 +2,6 @@
   display: flex;
   width: 50%;
   border: solid;
-  margin: 0 44%;
   align-items: center;
 }
 
@@ -26,3 +25,37 @@
   background-position: center center;
   background-size: cover;
   }
+
+
+  .logo{
+    width: 350px;
+  }
+
+  .logo-motto{
+    flex-direction: column;
+    width: 50%;
+    margin: -14% 1% 1%;
+  }
+
+  .truth-motto{
+    margin: -9% 0;
+    margin: -17% -11% 0 0;
+  }
+
+.home-bottom-screen{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: -6% 1% 1%;
+
+}
+
+.title-paragraph{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.wine-of-the-month-paragraph{
+  width: 100%;
+}

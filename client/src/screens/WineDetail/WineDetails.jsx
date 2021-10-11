@@ -104,7 +104,7 @@ export default function WineDetails(props) {
                     size="small"
                     sx={{ borderRadius: 10 }}
                     style={{ border: '2px solid' }}
-                    href={`/ratings/${rating.id}/edit`}
+                    href={`/ratings/${wineInfo.id}/edit`}
                     size="small"
                     varient='contained'
                     color="primary">

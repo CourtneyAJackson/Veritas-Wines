@@ -55,7 +55,7 @@ function Wines(props) {
                       sx={ { borderRadius: 10} }
                     style={{ border: '2px solid' }}
                     className='add-rating'
-                    href={`wine-details/${wine.id}/new`}
+                    href={`ratings/${wine.id}/new`}
                     color='primary'
                     variant='contained'
                   >
