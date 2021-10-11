@@ -1,4 +1,4 @@
-.edit-container {
+.form-register-container {
   align-self: center;
   padding: 4em;
   width: 50%;
@@ -6,12 +6,16 @@
   margin: 4em auto;
   border: 2px solid #b0bec5;
   border-radius: 6px;
-  border: solid;
   box-shadow: 2px 4px 3px lightgrey;
   background: white;
   margin-bottom: 274px;
  
 }
+
+/* .outter-registration-container{
+    background: black;
+    padding: 22px;
+} */
 
 
 .rating-edit{
@@ -21,12 +25,12 @@
   margin-left: 29%;
 }
 
-.edit-container h2 {
+.register-container h2 {
   text-align: center;
   font-size: 40px;
 }
 
-.edit-container form {
+.register-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,25 +39,25 @@
 }
 
 
-.edit-button {
+.register-button {
   width: 50%;
   margin: 1em auto;
   background: goldenrod;
 }
 
 
-.edit-container form a {
+.register-container form a {
   margin: auto;
   text-decoration: none;
 }
 
-.edit-container form label {
+.register-container form label {
   margin-top: 0.6em;
 }
 
 
 
-.edit-container label {
+.register-container label {
   font-size: 15px;
 }
 
