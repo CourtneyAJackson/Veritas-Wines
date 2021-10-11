@@ -18,29 +18,14 @@ function MainContainer() {
   const [wines, setWines] = useState([])
   const history = useHistory()
 
-  // useEffect(() => {
-  //   const getRatings = async () => {
-  //     const ratingsList = await getAllRatings()
-  //     setRatings(ratingsList)
-
-  //   }
-  //   getRatings()
-  // }, [])
-
   useEffect(() => {
     const getWines = async () => {
       const winesList = await getAllWines()
       setWines(winesList)
-      //  console.log(winesList)
     }
     getWines()
   }, [toggle])
 
-  // const handleRatingCreate = async (ratingData) => {
-  //   const newRating = await postRating(ratingData);
-  //   setRatings((prevState) => [...prevState, newRating]);
-  //   // history.push('/wines');
-  // };
   const handleRatingEdit = async (ratingData, id, wiID) => {
     await putRating(ratingData, id);
     setToggle(prev => !prev)
@@ -73,5 +58,4 @@ function MainContainer() {
     </Switch>
   )
 }
-// handleRatingCreate={handleRatingCreate}
 export default MainContainer

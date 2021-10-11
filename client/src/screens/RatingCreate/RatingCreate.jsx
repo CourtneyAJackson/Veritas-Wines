@@ -38,7 +38,7 @@ function RatingCreate(props) {
     const oneWineItem = await postRating(fullRating, id);
     setWineItem(oneWineItem);
     console.log(wineItem)
-    history.push(`/wine-details/${wineItem.id}`)
+    history.push(`/wine-details/${id}`)
   };
 
 
@@ -47,7 +47,7 @@ function RatingCreate(props) {
     <div className="form-add-container">
       <div className="add-container">
       <form onSubmit={handleSubmit}>
-        <h2>Please select a rating below.</h2>
+        <h2 className='add-title'>Please select a rating below.</h2>
         `<select 
           className="rating-create"
           placeholder='Category'
@@ -63,7 +63,7 @@ function RatingCreate(props) {
           <option value='4'>5</option>
         </select>
         
-        <Box display="flex" justifyContent="space-around">
+        {/* <Box display="flex" justifyContent="space-around">
         <Button size="small"
                     // sx={ { borderRadius: 10 } }
                     style={{ border: '2px solid' }}
@@ -73,7 +73,8 @@ function RatingCreate(props) {
                   onClick={handleSubmit}
               >Submit
                 </Button>
-                </Box>
+                </Box> */}
+            <button>Submit</button>
       </form>
           </div>
         </div>

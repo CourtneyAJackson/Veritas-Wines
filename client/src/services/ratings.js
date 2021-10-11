@@ -11,7 +11,6 @@ export const getOneRating = async (id) => {
 };
 
 export const postRating = async (ratingData, id) => {
-  console.log("from services",ratingData)
   const resp = await api.post(`/wines/${id}/ratings`, { rating: ratingData });
   return resp.data;
 };
