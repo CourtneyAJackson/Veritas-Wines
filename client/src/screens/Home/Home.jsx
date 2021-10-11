@@ -16,7 +16,8 @@ function Home() {
         </header>
       </div>
       <div className="home-bottom-screen">
-      <Box>
+        <Box>
+          <div className='homepage-button'>
         <Button
           href='/wines'
           style={{
@@ -28,6 +29,7 @@ function Home() {
         >
           Explore Our Collection
         </Button>
+        </div>
       </Box>
       <div className="wine-of-month-details">
         <img className="wine-of-the-month" src='https://wineparity.com/wp-content/uploads/2021/02/2017-Markham-Merlot-300x300.png'

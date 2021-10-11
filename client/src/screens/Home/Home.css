@@ -29,6 +29,7 @@
 
   .logo{
     width: 350px;
+    margin-top: 75px;
   }
 
   .logo-motto{
@@ -58,4 +59,41 @@
 
 .wine-of-the-month-paragraph{
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .homepage-image {
+    width: 100%;
+  }
+  .logo-motto {
+    font-size: 40px;
+  }
+  .divider {
+    width: 250px;
+  }
+  .wine-of-the-month-detail {
+    padding: 32px 0 0;
+    font-size: 19px;
+  }
+  .home-bottom-screen{
+    width: auto;
+    margin: 0;
+  }
+  /* .home-cards {
+    height: 250px;
+  }
+  .home-card-img {
+    width: 100%;
+  } */
+  .home-card-name {
+    font-size: 14px;
+  }
+  /* .call-to-action {
+    font-size: 40px;
+  } */
+  .homepage-button {
+    font-size: 17px;
+    height: 42px;
+    width: 125px;
+  }
 }
