@@ -30,7 +30,8 @@ function Layouts(props) {
                 props.currentUser && <>
                   <Link classNames='wine-collection' to='/wines'>Our Collection</Link>
                 </>
-              }
+          }
+          <Link to='/home'>Home</Link>
         </div>
       </div>
       {props.children}

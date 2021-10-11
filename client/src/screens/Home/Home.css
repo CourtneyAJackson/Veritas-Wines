@@ -3,6 +3,7 @@
   width: 50%;
   border: solid;
   align-items: center;
+  box-shadow: 0px 0px 15px -1px;
 }
 
 .wine-of-the-month{
