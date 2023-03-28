@@ -10,6 +10,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { ClassNames } from '@emotion/react';
 import { makeStyles } from '@material-ui/core';
+import { Analytics } from '@segment/analytics-node'
+const analytics = new Analytics({ mmtnbHziOjrrFEzcc0q1eVD3LeOt7b6E })
 
 
 import Layout from './components/layouts/Layout';
